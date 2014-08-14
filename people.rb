@@ -31,6 +31,12 @@ puts i.greeting
 s = Student.new("Christina")
 puts s.greeting
 
+# call the teach method on your instructor
+i.teach
+
+# call the learn method on your student
+s.learn
+
 
 
 
