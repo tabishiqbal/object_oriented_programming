@@ -1,7 +1,7 @@
 
 class Parent
   attr_accessor :name
-  
+
   def initialize(name)
     @name = name
   end
@@ -43,7 +43,8 @@ s.learn
 
 # call the teach method on your student instance
 
-#s.teach  -->  this doesn't work as s
+# s.teach  -->  You receive an error when you run the code.  This happens as the "teach" is
+#               not an instance variable and cannot be accessed out of method.
 
 
 
