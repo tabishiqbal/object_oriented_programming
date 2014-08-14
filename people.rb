@@ -1,5 +1,5 @@
 
-class Parent
+class Person
   attr_accessor :name
 
   def initialize(name)
@@ -12,14 +12,14 @@ class Parent
 end
 
 
-class Student < Parent
+class Student < Person
 	def learn
 		 puts "I get it"
 	end
 end
 
 
-class Instructor < Parent
+class Instructor < Person
   def teach
     puts "Everything in Ruby is an Object"
   end
@@ -44,7 +44,7 @@ s.learn
 # call the teach method on your student instance
 
 # s.teach  -->  You receive an error when you run the code.  This happens as the "teach" is
-#               not an instance variable and cannot be accessed out of method.
+#               not an instance method and cannot be accessed out of class.
 
 
 
