@@ -47,10 +47,14 @@ class Rover
     def move
       if @direction == "N"
         @y += 1
-        puts "#{@y}"
-      end
+      elsif @direction == "W"
+        @x -= 1
+      elsif @direction == "E"
+        @x += 1
+      elsif @direction == "S"
+        @y -= 1
+      end 
     end
-
 
 
 end
@@ -79,9 +83,7 @@ class UserInput
         @rover_one.move
       else
         @rover_one.rotate(bob)
-
       end
-
     end
     @rover_one.current_position
   end
@@ -90,99 +92,3 @@ end
 UserInput.position
 UserInput.order
 
-
-
-# pleateu = Grid.new(5, 5)
-
-
-
-
-
-
-
-
-# class Grid
-#   attr_accessor :max_x, :max_y
-
-#     def initialize(max_x, max_y)
-#       @max_x = max_x
-#       @max_y = max_y
-#     end
-# end
-
-
-
-
-# puts "this is your current position: #{rover_one.current_position}"
-
-# rover_one.move
-
-# puts "this is your current position: #{rover_one.current_position}"
-
-
-
-
-#  rotation
-
-
-
-  # def orientation_left
-  #   case @direction
-  #   when "N"
-  #     puts "your orientation is now W"
-  #     @direction = "W"
-  #   when "W"
-  #     puts "your orientation is now S"
-  #     @direction = "S"
-  #   when "S"
-  #     puts "your orientation is now E"
-  #     @direction = "E"
-  #   when "E"
-  #     puts "your orientation is now N"
-  #     @direction = "N"
-  #   else
-  #     puts "I don't know what your current direction is."
-  #     "#{@direction}"
-  #   end
-  # end
-
-  # def orientation_right
-
-  #    case @direction
-  #   when "N"
-  #     puts "your orientation is now E"
-  #     @direction = "E"
-  #   when "E"
-  #     puts "your orientation is now S"
-  #     @direction = "S"
-  #   when "S"
-  #     puts "your orientation is now W"
-  #     @direction = "W"
-  #   when "W"
-  #     puts "your orientation is now N"
-  #     @direction = "N"
-  #   else
-  #     puts "I don't know what your current direction is."
-  #     "#{@direction}"
-  #   end
-  # end
-
-#
-
-
-
-
-# rover_one.orientation_left()
-
-# rover_one.move
-# puts rover_one.current_position
-
-# rover_one.orientation_left()
-# rover_one.move
-
-# rover_one.orientation_left()
-# rover_one.move
-
-# rover_one.orientation_left()
-# rover_one.move
-# rover_one.move
