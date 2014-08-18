@@ -59,36 +59,46 @@ class Rover
 
     end
 
-end
+end # End of Rover Class
 
 
 class UserInput
 
-  def self.position
-    puts "Where would you want your rover to land? (x, y, direction)"
-    
-    @position = gets.chomp
-    
-    @x = @position.split(//)[1].to_i
-    @y = @position.split(//)[3].to_i
-    @direction = @position.split(//)[5].upcase
-    
-    @rover_one = Rover.new(@x, @y, @direction)
-  end
-
-  def self.order
-    puts "use 'L', 'R', and 'M' commands to move your rover"
-    @order = gets.chomp.upcase
-    @order.split(//).each do |x|
-      if x == "M" 
-        @rover_one.move
-      else
-        @rover_one.rotate(x)
-      end
+    def self.position
+      puts "Where would you want your rover to land? (x, y, cardinal direction)"
+      
+      @position = gets.chomp
+      
+      @x = @position.split(//)[1].to_i
+      @y = @position.split(//)[3].to_i
+      @direction = @position.split(//)[5].upcase
+      
+      @rover_one = Rover.new(@x, @y, @direction)
+      
     end
-    @rover_one.current_position
-  end
-end
+
+    def self.order
+      puts "Use 'L', 'R', and 'M' commands to move your rover"
+      @order = gets.chomp.upcase
+      @order.split(//).each do |x|
+        if x == "M" 
+          @rover_one.move
+        else
+          @rover_one.rotate(x)
+        end
+      end
+      print "Your rovers current location is now:  "
+      @rover_one.current_position
+    end
+
+    def self.grid
+      puts "Your rover can only travel on a 5 x 5 grid!"
+      puts "Becareful with where you land your rover and"
+      puts "what commands you give your rover to move!"
+    end
+end #end of UserInput Class
+
+
 
 
 
